@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Aboreto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('☺︎'),
+    url('../../fonts/aboreto-v2-latin-regular.ttf'),
+    url('../../fonts/aboreto-v2-latin-regular.woff'),
+    url('../../fonts/aboreto-v2-latin-regular.woff2');
+};
+
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    src: local('☺︎'),
+    url('../../fonts/rubik-v21-latin-700.ttf'),
+    url('../../fonts/rubik-v21-latin-700.woff'),
+    url('../../fonts/rubik-v21-latin-700.woff2');
+};
+
+@font-face {
+    font-family: 'Rubik';
+    font-style: italic;
+    font-weight: 400;
+    src: local('☺︎'),
+    url('../../fonts/rubik-v21-latin-italic.ttf'),
+    url('../../fonts/rubik-v21-latin-italic.woff'),
+    url('../../fonts/rubik-v21-latin-italic.woff2');
+};
+
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    src: local('☺︎'),
+    url('../../fonts/rubik-v21-latin-regular.ttf'),
+    url('../../fonts/rubik-v21-latin-regular.woff'),
+    url('../../fonts/rubik-v21-latin-regular.woff2');
+};
