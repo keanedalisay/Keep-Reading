@@ -11,6 +11,7 @@ html{
 }
 
 .main-frame{
+    margin: 0 auto;
     width: min(100%, 80rem);
 }
 
