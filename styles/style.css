@@ -30,6 +30,22 @@ html{
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
 
+.button-frame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
+}
+.add-book-button{
+    padding: clamp(1rem, 3vh, 1.5rem) clamp(2rem, 5vw, 3.5rem);
+    background-color: var(--white);
+    border: .1rem solid var(--grey);
+    border-radius: .5rem;
+}
+
 .hide{
     display: none;
 }
