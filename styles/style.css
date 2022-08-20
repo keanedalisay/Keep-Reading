@@ -12,9 +12,13 @@ html{
 
 .main-frame{
     margin: 0 auto;
+    padding: clamp(2rem, 5vh, 3rem) 0;
     width: min(100%, 80rem);
 }
 
+main{
+    padding: 0 0 clamp(2rem, 5vh, 3rem) 0;
+}
 .title-frame{
     display: flex;
     justify-content: center;
@@ -47,6 +51,7 @@ button{
 }
 
 footer{
+    padding: clamp(2rem, 5vh, 3rem) 0;
     display: flex;
     justify-content: center;
     align-items: center;
