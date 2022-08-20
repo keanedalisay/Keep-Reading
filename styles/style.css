@@ -50,6 +50,19 @@ button{
     border-radius: .5rem;
 }
 
+.book{
+    padding: 1rem;
+    background-color: var(--white);
+    border: .2rem solid var(--black);
+    border-radius: 0 .5rem .5rem 0rem;
+    box-shadow: -.2rem .3rem 0 .1rem var(--black);
+}
+.book > img{
+    width: 8rem;
+    height: 10rem;
+    object-fit: cover;
+}
+
 footer{
     padding: clamp(2rem, 5vh, 3rem) 0;
     display: flex;
