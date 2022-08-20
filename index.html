@@ -12,6 +12,38 @@
     </head>
     <body>
         <div class="overlay"></div>
+        <div class="add-book-popup">
+            <span>Add New Book</span>
+            <button><object data="img/exit-icon.svg" type="image/svg+xml" width="30" height="30"></object></button>
+            <form action="#">
+                <div class="input-frame">
+                    <label for="title">Title</label>
+                    <input id="title" name="book-title" type="text" placeholder="e.g. Dune" required>
+                </div>
+                <div class="input-frame">
+                    <label for="author">Author</label>
+                    <input id="author" name="book-author" type="text" placeholder="e.g. Frank Herbert" required>
+                </div>
+                <div class="input-frame">
+                    <label for="pages">Num. of Pages</label>
+                    <input id="pages" name="book-pages" type="number" placeholder="e.g. 412" required>
+                </div>
+                <div class="input-frame">
+                    <label for="picture">Picture</label>
+                    <input id="picture" name="book-picture" type="file" accept="image/*">
+                </div>
+                <div class="input-frame">
+                    <label for="status">Status</label>
+                    <select id="status" name="book-status" required>
+                        <option value="">-Select Status-</option>
+                        <option value="read">Read</option>
+                        <option value="inprog">In Progress</option>
+                        <option value="nread">Not Read</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         <div class="main-frame">
             <main>
                 <div class="title-frame">
