@@ -10,7 +10,9 @@ html{
     font-size: 10px;
 }
 
-
+.main-frame{
+    width: min(100%, 80rem);
+}
 
 .hide{
     display: none;
