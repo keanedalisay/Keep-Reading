@@ -14,6 +14,21 @@ html{
     width: min(100%, 80rem);
 }
 
+.title-frame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.webpage-icon{
+    width: clamp(5rem, 15vw, 10rem);
+    height: clamp(10rem, 20vh, 20rem);
+}
+.webpage-title{
+    display: inline-block;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
+}
+
 .hide{
     display: none;
 }
