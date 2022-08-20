@@ -46,6 +46,21 @@ button{
     border-radius: .5rem;
 }
 
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notice-text{
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+.notice-text > a{
+    text-decoration: none;
+}
+.notice-text > a:hover{
+    text-decoration: underline var(--black);
+}
+
 .hide{
     display: none;
 }
