@@ -5,3 +5,7 @@
     box-sizing: border-box;
     font-family: 'Rubik', Helvetica, Arial, sans-serif;
 }
+
+html{
+    font-size: 10px;
+}
