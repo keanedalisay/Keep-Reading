@@ -50,6 +50,9 @@ button{
     border-radius: .5rem;
 }
 
+.book-frame{
+    padding: clamp(2rem, 5vh, 3rem);
+}
 .book{
     padding: 1rem;
     background-color: var(--white);
