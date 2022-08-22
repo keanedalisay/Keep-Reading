@@ -296,3 +296,6 @@ footer{
 .hide{
     display: none;
 }
+.display-book{
+    grid-template-columns: repeat(auto-fit, 10rem);
+}
