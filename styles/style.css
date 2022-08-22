@@ -135,6 +135,61 @@ form{
     height: 10rem;
     object-fit: cover;
 }
+.book-info-popup{
+    margin: 0 auto;
+    padding: clamp(.5rem, 5vh, 1rem);
+    width: 14.5rem;
+    position: absolute;
+    top: 30vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: var(--white);
+    border: .1rem solid var(--black);
+}
+.book-info-popup > .close-button{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: clamp(.5rem, 5vh, 1rem);
+    right: clamp(.5rem, 5vh, 1rem);
+}
+.book-info-popup > .close-button > object{
+    width: 2rem;
+    height: 2rem;
+}
+.book-title{
+    width: 9rem;
+    font-size: clamp(1.8rem, 5vw, 2rem);
+    overflow: auto;
+}
+.book-author, .book-pages{
+    width: 100%;
+    margin: clamp(.5rem, 5vh, 1rem) 0 0 0;
+    font-size: 1.2rem;
+    overflow: auto;
+}
+.book-info-popup > form > .input-frame > select{
+    margin: 0;
+    font-size: 1.2rem;
+}
+.book-info-popup > form > .button-frame{
+    flex-flow: column wrap;
+}
+.book-info-popup > form > .button-frame > .submit-button{
+    padding: 1rem 3.2rem;
+    font-size: 1.5rem;
+}
+.delete-button{
+    margin: clamp(.5rem, 5vh, 1rem) 0 0 0;
+    padding: 1rem 2.4rem;
+    display: inline-block;
+    background-color: var(--white);
+    border: .1rem solid var(--grey);
+    border-radius: .5rem;
+    font-size: 1.5rem
+}
 
 footer{
     padding: clamp(2rem, 5vh, 3rem);
