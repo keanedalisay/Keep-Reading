@@ -46,6 +46,21 @@ button{
     border: .1rem solid var(--grey);
     border-radius: .5rem;
 }
+.add-book-button:hover{
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+.add-book-button:active{
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+.add-book-button:focus{
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
 .add-book-popup{
     margin: 0 auto clamp(2rem, 5vh, 3rem) auto;
     padding: clamp(2rem, 5vh, 3rem);
@@ -94,6 +109,21 @@ form{
     border: .1rem solid var(--grey);
     border-radius: .5rem;
 }
+.submit-button:hover{
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+.submit-button:active{
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+.submit-button:focus{
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
 .add-book-popup > .close-button{
     position: absolute;
     top: clamp(.5rem, 5vh, 1rem);
@@ -107,6 +137,18 @@ form{
     align-items: center;
     background-color: var(--white);
     border: .1rem solid var(--black);
+}
+.close-button:hover{
+    background-color: var(--delete);
+    border-color: var(--delete);
+}
+.close-button:active{
+    background-color: var(--delete);
+    border-color: var(--delete);
+}
+.close-button:focus{
+    background-color: var(--delete);
+    border-color: var(--delete);
 }
 .close-button > object{
     width: 3rem;
@@ -189,6 +231,21 @@ form{
     border: .1rem solid var(--grey);
     border-radius: .5rem;
     font-size: 1.5rem
+}
+.delete-button:hover{
+    background-color: var(--delete);
+    border-color: var(--delete);
+    color: var(--white);
+}
+.delete-button:active{
+    background-color: var(--delete);
+    border-color: var(--delete);
+    color: var(--white);
+}
+.delete-button:focus{
+    background-color: var(--delete);
+    border-color: var(--delete);
+    color: var(--white);
 }
 
 footer{
