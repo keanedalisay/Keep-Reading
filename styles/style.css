@@ -299,3 +299,12 @@ footer{
 .display-book{
     grid-template-columns: repeat(auto-fit, 10rem);
 }
+.read{
+    background-color: var(--read);
+}
+.in-progress{
+    background-color: var(--inprogress);
+}
+.not-read{
+    background-color: var(--nread);
+}
