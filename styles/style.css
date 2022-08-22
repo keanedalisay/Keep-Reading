@@ -50,11 +50,13 @@ button{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
+    cursor: pointer;
 }
 .add-book-button:active{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
+    cursor: pointer;
 }
 .add-book-button:focus{
     background-color: var(--black);
@@ -113,11 +115,13 @@ form{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
+    cursor: pointer;
 }
 .submit-button:active{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
+    cursor: pointer;
 }
 .submit-button:focus{
     background-color: var(--black);
@@ -141,10 +145,12 @@ form{
 .close-button:hover{
     background-color: var(--delete);
     border-color: var(--delete);
+    cursor: pointer;
 }
 .close-button:active{
     background-color: var(--delete);
     border-color: var(--delete);
+    cursor: pointer;
 }
 .close-button:focus{
     background-color: var(--delete);
@@ -192,6 +198,16 @@ form{
     border: .2rem solid var(--black);
     border-radius: 0 .5rem .5rem 0rem;
     box-shadow: -.2rem .3rem 0 .1rem var(--black);
+}
+.book:hover{
+    cursor: pointer;
+}
+.book:active{
+    cursor: pointer;
+}
+.book:focus{
+    outline-color: var(--grey);
+    box-shadow: -.2rem .3rem 0 .1rem var(--grey);
 }
 .book > img{
     width: 8rem;
@@ -257,11 +273,13 @@ form{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
+    cursor: pointer;
 }
 .delete-button:active{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
+    cursor: pointer;
 }
 .delete-button:focus{
     background-color: var(--delete);
