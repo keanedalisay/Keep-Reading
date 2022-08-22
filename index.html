@@ -12,8 +12,8 @@
     </head>
     <body>
         <div class="overlay hide"></div>
-        <div class="add-book-popup hide">
-            <span>Add New Book</span>
+        <div class="add-book-popup">
+            <span class="add-book-title">Add New Book</span>
             <button class="close-button"><object data="img/exit-icon.svg" type="image/svg+xml" width="30" height="30"></object></button>
             <form action="#">
                 <div class="input-frame">
@@ -41,7 +41,9 @@
                         <option value="nread">Not Read</option>
                     </select>
                 </div>
-                <button type="submit" class="submit-button">Submit</button>
+                <div class="button-frame">
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
             </form>
         </div>
         <div class="main-frame">
