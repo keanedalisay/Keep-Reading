@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class="overlay hide"></div>
-        <div class="add-book-popup">
+        <div class="add-book-popup hide">
             <span class="add-book-title">Add New Book</span>
             <button class="close-button"><object data="img/exit-icon.svg" type="image/svg+xml" width="30" height="30"></object></button>
             <form action="#">
@@ -60,13 +60,12 @@
                         <img src="img/dune-cover.jpg" alt="Dune">
                     </button>
                     <div class="book-info-popup hide">
-                        <h2>Dune</h2>
+                        <h2 id='book-title' class="book-title">Dune</h2>
                         <button class="close-button"><object data="img/exit-icon.svg" type="image/svg+xml" width="30" height="30"></object></button>
-                        <span>By Frank Herbert</span>
-                        <span>412 pages in total</span>
+                        <span id='book-author' class="book-author">By Frank Herbert</span>
+                        <span id="book-pages" class="book-pages">412 pages in total</span>
                         <form action="#">
                             <div class="input-frame">
-                                <label for="status">Status</label>
                                 <select id="status" name="book-status" required>
                                     <option value="">-Select Status-</option>
                                     <option value="read">Read</option>
@@ -74,8 +73,10 @@
                                     <option value="nread">Not Read</option>
                                 </select>
                             </div>
-                            <button class="delete-button">Delete</button>
-                            <button type="submit" class="submit-button">Save</button>
+                            <div class="button-frame">
+                                <button class="delete-button">Delete</button>
+                                <button type="submit" class="submit-button hide">Save</button>
+                            </div>
                         </form>
                     </div>
                 </div>
