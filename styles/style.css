@@ -200,14 +200,15 @@ form{
     box-shadow: -.2rem .3rem 0 .1rem var(--black);
 }
 .book:hover{
+    background-color: var(--black);
     cursor: pointer;
 }
 .book:active{
+    background-color: var(--black);
     cursor: pointer;
 }
 .book:focus{
-    outline-color: var(--grey);
-    box-shadow: -.2rem .3rem 0 .1rem var(--grey);
+    background-color: var(--black);
 }
 .book > img{
     width: 8rem;
