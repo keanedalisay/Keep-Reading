@@ -12,3 +12,10 @@ const popups = {
     bookInfoPopup : document.querySelector('.book-info-popup'),
 }
 
+const body = document.body;
+buttons.addBookBtn.addEventListener('click', openAddBookPopup);
+
+function openAddBookPopup(e){
+    popups.addBookPopup.classList.remove('hide');
+    body.classList.add('overlay');
+}
