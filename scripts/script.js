@@ -19,3 +19,12 @@ function openAddBookPopup(e){
     popups.addBookPopup.classList.remove('hide');
     body.classList.add('overlay');
 }
+
+buttons.closeBtns.forEach(closeBtn => {
+    closeBtn.addEventListener('click', closePopup);
+})
+
+function closePopup(e){
+    e.path[1].classList.add('hide');
+    body.classList.remove('overlay');
+}
