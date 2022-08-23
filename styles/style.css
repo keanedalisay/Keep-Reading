@@ -153,7 +153,7 @@ button{
 }
 
 .add-book-popup{
-    margin: 0 auto clamp(2rem, 5vh, 3rem) auto;
+    margin: 0 auto 3rem auto;
     padding: clamp(2rem, 5vh, 3rem);
     width: min(90%, 30rem);
     position: absolute;
@@ -330,11 +330,6 @@ footer{
 }
 
 .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: var(--overlay);
 }
 .hide{
