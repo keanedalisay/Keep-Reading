@@ -15,7 +15,7 @@
         <div class="add-book-popup hide">
             <span class="add-book-title">Add New Book</span>
             <button class="close-button"><object data="img/exit-icon.svg" type="image/svg+xml" width="30" height="30"></object></button>
-            <form action="#">
+            <form id='add-book' action="#" method="post">
                 <div class="input-frame">
                     <label for="title">Title</label>
                     <input id="title" name="book-title" type="text" placeholder="e.g. Dune" required>
@@ -42,7 +42,7 @@
                     </select>
                 </div>
                 <div class="button-frame">
-                    <button type="submit" class="submit-button add-book">Submit</button>
+                    <button type="submit" class="submit-button">Submit</button>
                 </div>
             </form>
         </div>
@@ -68,7 +68,7 @@
                         <button class="close-button"><object data="img/exit-icon.svg" type="image/svg+xml" width="30" height="30"></object></button>
                         <span id='book-author' class="book-author">By Frank Herbert</span>
                         <span id="book-pages" class="book-pages">412 pages in total</span>
-                        <form action="#">
+                        <form id='change-book-status' action="#" method="post">
                             <div class="input-frame">
                                 <select id="status" name="book-status" required>
                                     <option value="">-Select Status-</option>
@@ -79,7 +79,7 @@
                             </div>
                             <div class="button-frame">
                                 <button class="delete-button">Delete</button>
-                                <button type="submit" class="submit-button change-book-info hide">Save</button>
+                                <button type="submit" class="submit-button hide">Save</button>
                             </div>
                         </form>
                     </div>
