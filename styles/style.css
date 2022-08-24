@@ -330,6 +330,9 @@ footer{
 }
 
 .overlay{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
     background-color: var(--overlay);
 }
 .hide{
