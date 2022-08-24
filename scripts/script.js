@@ -1,9 +1,12 @@
 const buttons = {
     addBookBtn : document.querySelector('.add-book-button'),
-    subAddBookBtn : document.querySelector('.add-book'),
-    subChangeBookInfoBtn : document.querySelector('.change-book-info'),
     closeBtns : document.querySelectorAll('.close-button'),
     deleteBtn : document.querySelector('.delete-button'),
+}
+
+const forms = {
+    addBookForm : document.getElementById('add-book'),
+    changeBookStatusForm : document.getElementById('change-book-info'),
 }
 
 const popups = {
@@ -12,12 +15,14 @@ const popups = {
     bookInfoPopup : document.querySelector('.book-info-popup'),
 }
 
+const overlay = document.querySelector('.overlay');
 const body = document.body;
 buttons.addBookBtn.addEventListener('click', openAddBookPopup);
 
 function openAddBookPopup(e){
     popups.addBookPopup.classList.remove('hide');
-    body.classList.add('overlay');
+    overlay.classList.remove('hide');
+    body.style.cssText = 'background-color: var(--grey);';
 }
 
 buttons.closeBtns.forEach(closeBtn => {
@@ -26,5 +31,6 @@ buttons.closeBtns.forEach(closeBtn => {
 
 function closePopup(e){
     e.path[1].classList.add('hide');
-    body.classList.remove('overlay');
+    overlay.classList.add('hide');
+    body.style.cssText = 'background-color: none;';
 }
