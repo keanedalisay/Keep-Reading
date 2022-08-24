@@ -5,6 +5,6 @@
     --overlay: #808080AA;
     --delete: #FF6262;
     --read: #BCFFBC;
-    --inprogress: #FFFFAE;
-    --nread: #FFC1C1;
+    --inprogress: #ffffd0;
+    --nread: #ffe2e2;
 }
