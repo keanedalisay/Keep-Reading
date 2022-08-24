@@ -6,7 +6,7 @@ const buttons = {
 
 const forms = {
     addBookForm : document.getElementById('add-book'),
-    changeBookStatusForm : document.getElementById('change-book-info'),
+    changeBookInfoForm : document.getElementById('change-book-info'),
 }
 
 const popups = {
