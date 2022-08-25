@@ -262,6 +262,7 @@ button{
     width: 8rem;
     height: 10rem;
     object-fit: cover;
+    pointer-events: none;
 }
 
 
