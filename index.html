@@ -8,30 +8,40 @@
         <link href="styles/style.css" rel="stylesheet">
         <link href="styles/common.css" rel="stylesheet">
         <script src="scripts/script.js" async="false"></script>
+        
         <title>Remind</title>
     </head>
     <body>
         <div class="overlay hide"></div>
+
         <div class="add-book-popup hide">
             <span class="add-book-title">Add New Book</span>
-            <button class="close-button"><object data="img/exit-icon.svg" type="image/svg+xml" width="30" height="30"></object></button>
-            <form id='add-book' action="#" method="post">
+
+            <button class="close-btn">
+                <object data="img/exit-icon.svg" type="image/svg+xml" ></object>
+            </button>
+
+            <form id='add-book-form' action="#" method="post">
                 <div class="input-frame">
                     <label for="title">Title</label>
                     <input id="title" name="book-title" type="text" placeholder="e.g. Dune" required>
                 </div>
+
                 <div class="input-frame">
                     <label for="author">Author</label>
                     <input id="author" name="book-author" type="text" placeholder="e.g. Frank Herbert" required>
                 </div>
+
                 <div class="input-frame">
                     <label for="pages">Num. of Pages</label>
                     <input id="pages" name="book-pages" type="number" placeholder="e.g. 412" required>
                 </div>
+
                 <div class="input-frame">
                     <label for="picture">Picture</label>
                     <input id="picture" name="book-picture" type="file" accept="image/*">
                 </div>
+
                 <div class="input-frame">
                     <label for="status">Status</label>
                     <select id="status" name="book-status" required>
@@ -41,31 +51,38 @@
                         <option value="Not Read">Not Read</option>
                     </select>
                 </div>
-                <div class="button-frame">
-                    <button id='subm-form-btn' type="submit" class="submit-button">Submit</button>
+
+                <div class="btn-frame">
+                    <button id='subm-form-btn' type="submit" class="submit-btn">Submit</button>
                 </div>
             </form>
+
         </div>
+
         <div class="main-frame">
             <main>
                 <div class="title-frame">
-                    <object class="webpage-icon" data="img/remind-icon.svg" type="image/svg+xml" width="100" height="100"></object>
+                    <object class="webpage-icon" data="img/remind-icon.svg" type="image/svg+xml"></object>
                     <h1 class="webpage-title">Remind</h1>
                 </div>
-                <div class="button-frame">
-                    <button class="add-book-button">Add New Book</button>
+
+                <div class="btn-frame">
+                    <button class="add-book-btn">Add New Book</button>
                 </div>
+
                 <div class="book-frame">
                     <div class="no-book-popup">
                         <h2 class="no-book-title">Need to Remind of Something?</h2>
                         <p class="no-book-subtitle">Click the button above to remind yourself.</p>
                     </div>
+
                     <div class="book-info-popup hide">
                         <h2 id='book-title' class="book-title">Dune</h2>
-                        <button class="close-button"><object data="img/exit-icon.svg" type="image/svg+xml" width="30" height="30"></object></button>
+                        <button class="close-btn"><object data="img/exit-icon.svg" type="image/svg+xml"></object></button>
                         <span id='book-author' class="book-author">By Frank Herbert</span>
                         <span id="book-pages" class="book-pages">412 pages in total</span>
-                        <form id='change-book-info' action="#" method="post">
+
+                        <form id='book-status-form' action="#" method="post">
                             <div class="input-frame">
                                 <select id="status" name="book-status" required>
                                     <option value="">-Select Status-</option>
@@ -74,9 +91,10 @@
                                     <option value="Not Read">Not Read</option>
                                 </select>
                             </div>
-                            <div class="button-frame">
-                                <button id='delete-book-btn' class="delete-button">Delete</button>
-                                <button id='subm-chng-btn' type="submit" class="submit-button hide">Save</button>
+                            
+                            <div class="btn-frame">
+                                <button id='delete-book-btn' class="delete-btn">Delete</button>
+                                <button id='subm-chng-btn' type="submit" class="submit-btn hide">Save</button>
                             </div>
                         </form>
                     </div>

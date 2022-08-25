@@ -38,37 +38,37 @@ button{
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
 
-.button-frame{
+.btn-frame{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.add-book-button{
+.add-book-btn{
     padding: clamp(1rem, 3vh, 1.5rem) clamp(2rem, 5vw, 3.5rem);
     background-color: var(--white);
     border: .1rem solid var(--grey);
     border-radius: .5rem;
 }
-.add-book-button:hover{
+.add-book-btn:hover{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
     cursor: pointer;
 }
-.add-book-button:active{
+.add-book-btn:active{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
     cursor: pointer;
 }
-.add-book-button:focus{
+.add-book-btn:focus{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
 }
 
 
-.close-button{
+.close-btn{
     width: 3rem;
     height: 3rem;
     display: flex;
@@ -77,28 +77,28 @@ button{
     background-color: var(--white);
     border: .1rem solid var(--black);
 }
-.close-button:hover{
+.close-btn:hover{
     background-color: var(--delete);
     border-color: var(--delete);
     cursor: pointer;
 }
-.close-button:active{
+.close-btn:active{
     background-color: var(--delete);
     border-color: var(--delete);
     cursor: pointer;
 }
-.close-button:focus{
+.close-btn:focus{
     background-color: var(--delete);
     border-color: var(--delete);
 }
-.close-button > object{
+.close-btn > object{
     width: 3rem;
     height: 3rem;
     pointer-events: none;
 }
 
 
-.submit-button{
+.submit-btn{
     margin: clamp(1rem, 5vh, 2rem) 0 0 0;
     padding: clamp(.5rem, 3vh, 1rem) clamp(3rem, 5vw, 5rem);
     display: inline-block;
@@ -106,26 +106,26 @@ button{
     border: .1rem solid var(--grey);
     border-radius: .5rem;
 }
-.submit-button:hover{
+.submit-btn:hover{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
     cursor: pointer;
 }
-.submit-button:active{
+.submit-btn:active{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
     cursor: pointer;
 }
-.submit-button:focus{
+.submit-btn:focus{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
 }
 
 
-.delete-button{
+.delete-btn{
     padding: 1rem 2.4rem;
     display: inline-block;
     background-color: var(--white);
@@ -133,19 +133,19 @@ button{
     border-radius: .5rem;
     font-size: 1.5rem
 }
-.delete-button:hover{
+.delete-btn:hover{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
     cursor: pointer;
 }
-.delete-button:active{
+.delete-btn:active{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
     cursor: pointer;
 }
-.delete-button:focus{
+.delete-btn:focus{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
@@ -201,7 +201,7 @@ button{
     border-radius: .5rem;
     font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
-.add-book-popup > .close-button{
+.add-book-popup > .close-btn{
     position: absolute;
     top: clamp(.5rem, 5vh, 1rem);
     right: clamp(.5rem, 5vh, 1rem);
@@ -277,14 +277,14 @@ button{
     background-color: var(--white);
     border: .1rem solid var(--black);
 }
-.book-info-popup > .close-button{
+.book-info-popup > .close-btn{
     width: 2rem;
     height: 2rem;
     position: absolute;
     top: clamp(.5rem, 5vh, 1rem);
     right: clamp(.5rem, 5vh, 1rem);
 }
-.book-info-popup > .close-button > object{
+.book-info-popup > .close-btn > object{
     width: 2rem;
     height: 2rem;
 }
@@ -305,10 +305,10 @@ button{
     margin: 0;
     font-size: 1.2rem;
 }
-.book-info-popup > form > .button-frame{
+.book-info-popup > form > .btn-frame{
     flex-flow: column wrap;
 }
-.book-info-popup > form > .button-frame > .submit-button{
+.book-info-popup > form > .btn-frame > .submit-btn{
     padding: 1rem 3.2rem;
     font-size: 1.5rem;
 }
@@ -330,24 +330,25 @@ footer{
     text-decoration: underline var(--black);
 }
 
-.overlay{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background-color: var(--overlay);
-}
+
 .hide{
     display: none;
 }
+
 .display-book{
     grid-template-columns: repeat(auto-fit, 10rem);
 }
-.read{
-    background-color: var(--white);
-}
+
 .in-progress{
     background-color: var(--inprogress);
 }
 .not-read{
     background-color: var(--nread);
+}
+
+.overlay{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: var(--overlay);
 }
