@@ -33,6 +33,9 @@ function closePopup(e){
     e.path[1].classList.add('hide');
     overlay.classList.add('hide');
     body.style.cssText = 'background-color: none;';
+
+    const saveBtn = popups.bookInfoPopup.children['change-book-info']['subm-chng-btn'];
+    saveBtn.classList.add('hide');
 }
 
 const bookFrame = document.querySelector('.book-frame');
@@ -81,9 +84,129 @@ function createBook(bTitle, bPic, bStatus){
     else if (bStatus == 'In Progress') bBtn.classList.add('in-progress');
     else if (bStatus == 'Not Read') bBtn.classList.add('not-read');
 
+    bBtn.addEventListener('click', displayBookInfo);
+
     bookFrame.appendChild(bBtn);
     displayBookOr(bBtn);
     bBtn.appendChild(bCover);
+
+    console.log(bCollection);
+}
+
+function displayBookInfo(e){
+    popups.bookInfoPopup.classList.remove('hide');
+    overlay.classList.remove('hide');
+    body.style.cssText = 'background-color: var(--grey);';
+
+    for (const book of bCollection){
+        if (book.bTitle != e.target.title){
+            continue;
+        } else {
+            const bTitle = popups.bookInfoPopup.children['book-title'];
+            const bAuthor = popups.bookInfoPopup.children['book-author'];
+            const bPages = popups.bookInfoPopup.children['book-pages'];
+            const bStatus = popups.bookInfoPopup.children['change-book-info']['status'];
+
+            bTitle.textContent = `${book.bTitle}`;
+            bAuthor.textContent = `By ${book.bAuthor}`;
+            if (book.bPages <= 1) bPages.textContent = `${book.bPages} page in total`;
+            else bPages.textContent = `${book.bPages} pages in total`;
+            bStatus.value = book.bStatus;
+
+            bStatus.addEventListener('change', changeStatus);
+
+            const delBookBtn = popups.bookInfoPopup.children['change-book-info']['delete-book-btn'];
+            delBookBtn.addEventListener('click', deleteBook);
+
+            forms.changeBookInfoForm.addEventListener('submit', submitNewBookInfo);
+        }
+    }
+}
+
+function changeStatus(e){
+    const saveBtn = popups.bookInfoPopup.children['change-book-info']['subm-chng-btn'];
+    saveBtn.classList.remove('hide');
+}
+
+function submitNewBookInfo(e){
+    e.preventDefault();
+
+    const bTitle = popups.bookInfoPopup.children['book-title'].textContent;
+    const bStatus = this['status'].value;
+
+    for (const book of bCollection){
+        if (book.bTitle != bTitle){
+            continue;
+        } else {
+            book.bStatus = bStatus;
+            popups.bookInfoPopup.children['change-book-info']['status'].value = bStatus;
+
+            if (bStatus == 'Read') {
+                for (const elem of bookFrame.children){
+                    if (elem.title != bTitle){
+                        continue;
+                    } else {
+                        elem.classList.remove('in-progress');
+                        elem.classList.remove('not-read');
+                    }
+                }
+            } else if (bStatus == 'In Progress') {
+                for (const elem of bookFrame.children){
+                    if (elem.title != bTitle){
+                        continue;
+                    } else {
+                        elem.classList.add('in-progress');
+                        elem.classList.remove('not-read');
+                    }
+                }
+            } else if (bStatus == 'Not Read') {
+                for (const elem of bookFrame.children){
+                    if (elem.title != bTitle){
+                        continue;
+                    } else {
+                        elem.classList.remove('in-progress');
+                        elem.classList.add('not-read');
+                    }
+                }
+            } 
+
+            const saveBtn = popups.bookInfoPopup.children['change-book-info']['subm-chng-btn'];
+            saveBtn.classList.add('hide');
+
+            popups.bookInfoPopup.classList.add('hide');
+            overlay.classList.add('hide');
+            body.style.cssText = 'background-color: none;';
+        }
+    }
+}
+
+function deleteBook(e){
+    e.preventDefault();
+
+    popups.bookInfoPopup.classList.add('hide');
+    overlay.classList.add('hide');
+    body.style.cssText = 'background-color: none;';
+
+    const bTitle = popups.bookInfoPopup.children['book-title'];
+    for (const book of bCollection){
+        if (book.bTitle != bTitle.textContent){
+            continue;
+        } else {
+            for(let i = 0; i < bookFrame.children.length; i++){
+                if (bookFrame.children[i].title != book.bTitle){
+                    continue;
+                }
+                else{
+                    bookFrame.children[i].remove();
+                    const bIndex = bCollection.findIndex(book => {
+                        return book.bTitle == bTitle.textContent;
+                    });
+                    bCollection.splice(bIndex, 1);
+                    console.log(bCollection);
+                }
+            }
+        }
+    }
 }
 
 function displayBookOr(book){
