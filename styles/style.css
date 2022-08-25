@@ -321,6 +321,7 @@ footer{
     align-items: center;
 }
 .notice-text{
+    text-align: center;
     font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 .notice-text > a{
