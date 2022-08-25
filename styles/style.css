@@ -304,13 +304,15 @@ input::-webkit-file-upload-button:hover{
     white-space: nowrap;
 }
 .book-info-popup > form > .input-frame > select{
-    margin: 0;
+    margin: 0 auto;
+    width: 85%;
     font-size: 1.2rem;
 }
 .book-info-popup > form > .btn-frame{
     flex-flow: column wrap;
 }
 .book-info-popup > form > .btn-frame > .submit-btn{
+    margin-top: 1rem;
     padding: 1rem 3.2rem;
     font-size: 1.5rem;
 }
