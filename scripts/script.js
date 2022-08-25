@@ -87,8 +87,8 @@ function createBook(bTitle, bPic, bStatus){
     bBtn.addEventListener('click', displayBookInfo);
 
     bookFrame.appendChild(bBtn);
-    displayBookOr(bBtn);
     bBtn.appendChild(bCover);
+    displayBookOrNot();
 
     console.log(bCollection);
 }
@@ -202,6 +202,9 @@ function deleteBook(e){
                         return book.bTitle == bTitle.textContent;
                     });
                     bCollection.splice(bIndex, 1);
+
+                    displayBookOrNot();
+                    
                     console.log(bCollection);
                 }
             }
@@ -209,17 +212,16 @@ function deleteBook(e){
     }
 }
 
-function displayBookOr(book){
-    for (const elem of bookFrame.children){
-        if (elem != book) {
-            popups.noBookPopup.classList.remove('hide');
-            bookFrame.classList.remove('display-book');
-        } else {
-            popups.noBookPopup.classList.add('hide');
-            bookFrame.classList.add('display-book');
-        }
+function displayBookOrNot(){
+    if (bookFrame.children.length <= 2) {
+        popups.noBookPopup.classList.remove('hide');
+        bookFrame.classList.remove('display-book');
+    } else {
+        popups.noBookPopup.classList.add('hide');
+        bookFrame.classList.add('display-book');
     }
 }
+
 
 function Book (bTitle, bAuthor, bPages, bPic, bStatus){
     this.bTitle = bTitle;
