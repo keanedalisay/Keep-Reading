@@ -189,11 +189,11 @@ button{
     font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 input::-webkit-file-upload-button{
+    margin-right: 1rem;
     background-color: var(--white);
     border: .1rem solid var(--black);
     border-radius: .5rem;
-    font-family: 'Rubik', Helvetica, Arial, sans-serif;
-    font-weight: 600;
+    font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
 input::-webkit-file-upload-button:hover{
     background-color: var(--black);
