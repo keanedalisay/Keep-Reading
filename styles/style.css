@@ -155,8 +155,8 @@ button{
     margin: 0 auto 3rem auto;
     padding: clamp(2rem, 5vh, 3rem);
     width: min(90%, 30rem);
-    position: absolute;
-    top: 30vh;
+    position: fixed;
+    top: 10vh;
     left: 0;
     right: 0;
     display: flex;
@@ -165,19 +165,6 @@ button{
     align-items: center;
     background-color: var(--white);
     border: .1rem solid var(--black);
-}
-.add-book-popup::after{
-    content: "";
-    margin-left: -3vh;
-    margin-top: -3vh;
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    border: 3vh solid transparent;
-    border-bottom-color: var(--black);
-    border-top: 0;
 }
 .add-book-title{
     padding: 0 0 clamp(.5rem, 5vh, 1rem) 0;
@@ -268,7 +255,7 @@ button{
     margin: 0 auto;
     padding: clamp(.5rem, 5vh, 1rem);
     width: 14.5rem;
-    position: absolute;
+    position: fixed;
     top: 30vh;
     left: 0;
     right: 0;
@@ -348,7 +335,7 @@ footer{
 }
 
 .overlay{
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
