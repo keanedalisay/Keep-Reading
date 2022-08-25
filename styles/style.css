@@ -126,7 +126,6 @@ button{
 
 
 .delete-button{
-    margin: clamp(.5rem, 5vh, 1rem) 0 0 0;
     padding: 1rem 2.4rem;
     display: inline-block;
     background-color: var(--white);
