@@ -198,6 +198,10 @@ input::-webkit-file-upload-button{
 input::-webkit-file-upload-button:hover{
     background-color: var(--black);
     color: var(--white);
+    cursor: pointer;
+}
+.input-frame > input[type='file'], .input-frame > select:hover{
+    cursor: pointer;
 }
 .add-book-popup > .close-btn{
     position: absolute;
