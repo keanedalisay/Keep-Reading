@@ -25,7 +25,7 @@ buttons.addBookBtn.addEventListener('click', openAddBookPopup);
 function openAddBookPopup(e){
     popups.addBookPopup.classList.remove('hide');
     overlay.classList.remove('hide');
-    body.style.cssText = 'background-color: var(--grey);';
+    
 }
 
 buttons.closeBtns.forEach(closeBtn => {
@@ -35,7 +35,7 @@ buttons.closeBtns.forEach(closeBtn => {
 function closePopup(e){
     e.path[1].classList.add('hide');
     overlay.classList.add('hide');
-    body.style.cssText = 'background-color: none;';
+    
 
     buttons.saveBtn.classList.add('hide');
 }
@@ -61,7 +61,7 @@ function getBookData(e){
 
     popups.addBookPopup.classList.add('hide');
     overlay.classList.add('hide');
-    body.style.cssText = 'background-color: none;';
+    
 }
 
 function createBook(bTitle, bPic, bStatus){
@@ -96,7 +96,7 @@ function createBook(bTitle, bPic, bStatus){
 function displayBookInfo(e){
     popups.bookInfoPopup.classList.remove('hide');
     overlay.classList.remove('hide');
-    body.style.cssText = 'background-color: var(--grey);';
+    
 
     for (const book of bCollection){
         if (book.bTitle != this.title){
@@ -174,7 +174,7 @@ function submNewBookStat(e){
 
             popups.bookInfoPopup.classList.add('hide');
             overlay.classList.add('hide');
-            body.style.cssText = 'background-color: none;';
+            
         }
     }
 }
@@ -184,7 +184,7 @@ function deleteBook(e){
 
     popups.bookInfoPopup.classList.add('hide');
     overlay.classList.add('hide');
-    body.style.cssText = 'background-color: none;';
+    
 
     const titleLabel = popups.bookInfoPopup.children['book-title'];
 
