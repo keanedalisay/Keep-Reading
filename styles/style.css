@@ -43,29 +43,6 @@ button{
     justify-content: center;
     align-items: center;
 }
-.add-book-btn{
-    padding: clamp(1rem, 3vh, 1.5rem) clamp(2rem, 5vw, 3.5rem);
-    background-color: var(--white);
-    border: .1rem solid var(--grey);
-    border-radius: .5rem;
-}
-.add-book-btn:hover{
-    background-color: var(--black);
-    border-color: var(--black);
-    color: var(--white);
-    cursor: pointer;
-}
-.add-book-btn:active{
-    background-color: var(--black);
-    border-color: var(--black);
-    color: var(--white);
-    cursor: pointer;
-}
-.add-book-btn:focus{
-    background-color: var(--black);
-    border-color: var(--black);
-    color: var(--white);
-}
 
 
 .close-btn{

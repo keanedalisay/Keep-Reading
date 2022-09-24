@@ -1,5 +1,4 @@
 const buttons = {
-    addBookBtn : document.querySelector('.add-book-btn'),
     closeBtns : document.querySelectorAll('.close-btn'),
     deleteBtn : document.querySelector('.delete-btn'),
     saveBtn : document.getElementById('subm-chng-btn'),
@@ -19,14 +18,6 @@ const popups = {
 const overlay = document.querySelector('.overlay');
 const body = document.body;
 const bookFrame = document.querySelector('.book-frame');
-
-buttons.addBookBtn.addEventListener('click', openAddBookPopup);
-
-function openAddBookPopup(e){
-    popups.addBookPopup.classList.remove('hide');
-    overlay.classList.remove('hide');
-    
-}
 
 buttons.closeBtns.forEach(closeBtn => {
     closeBtn.addEventListener('click', closePopup);
