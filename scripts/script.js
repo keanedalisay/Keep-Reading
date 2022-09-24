@@ -10,7 +10,6 @@ const forms = {
 }
 
 const popups = {
-    noBookPopup : document.querySelector('.no-book-popup'),
     addBookPopup : document.querySelector('.add-book-popup'),
     bookInfoPopup : document.querySelector('.book-info-popup'),
 }
@@ -201,17 +200,6 @@ function deleteBook(e){
         }
     }
 }
-
-function displayBookOrNot(){
-    if (bookFrame.children.length <= 2) {
-        popups.noBookPopup.classList.remove('hide');
-        bookFrame.classList.remove('display-book');
-    } else {
-        popups.noBookPopup.classList.add('hide');
-        bookFrame.classList.add('display-book');
-    }
-}
-
 
 function Book (bTitle, bAuthor, bPages, bPic, bStatus){
     this.bTitle = bTitle;

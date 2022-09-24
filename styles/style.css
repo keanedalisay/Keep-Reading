@@ -196,28 +196,6 @@ input::-webkit-file-upload-button:hover{
     align-items: center;
     gap: clamp(2rem, 5vh, 3rem);
 }
-.no-book-popup{
-    width: 100%;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    border-top: .1rem solid var(--grey);
-    border-bottom: .1rem solid var(--grey);
-}
-.no-book-title{
-    width: min(100%, 35rem);
-    margin: clamp(3rem, 5vh, 5rem) 0;
-    font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    font-size: clamp(2rem, 3vw, 3rem);
-}
-.no-book-subtitle{
-    margin: clamp(1rem, 5vh, 2rem) 0;
-    width: min(100%, 30rem);
-    text-align: center;
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-}
 .book{
     padding: 1rem;
     background-color: var(--white);
