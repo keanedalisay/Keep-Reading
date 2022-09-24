@@ -206,6 +206,27 @@ input::-webkit-file-upload-button:hover{
     width: min(100%, 60rem);
     height: max(80vw, 40rem);
 }
+.book-frame::before{
+    content: '';
+    margin: 0 auto;
+    width: 80%;
+    height: .2rem;
+    position: relative;
+    top: 3rem;
+    display: block;
+    background: var(--black);
+    border-radius: 10%;
+}.book-frame::after{
+    content: '';
+    margin: 0 auto;
+    width: 80%;
+    height: .2rem;
+    position: relative;
+    top: 3rem;
+    display: block;
+    background: var(--black);
+    border-radius: 10%;
+}
 .book-rack{
     padding: clamp(2rem, 5vh, 3rem);
     width: 100%;
