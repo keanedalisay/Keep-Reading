@@ -9,18 +9,17 @@
 html{
     font-size: 10px;
 }
+main{
+    margin: 0 auto;
+    padding: clamp(2rem, 5vh, 3rem) 0;
+    width: min(100%, 80rem);
+}
 form{
     width: 100%;
 }
 button{
     font-size: clamp(1.5rem, 3vw, 1.8rem);
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
-}
-
-.main-frame{
-    margin: 0 auto;
-    padding: clamp(2rem, 5vh, 3rem) 0;
-    width: min(100%, 80rem);
 }
 
 .title-frame{
@@ -38,6 +37,12 @@ button{
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
 
+.modal{
+    position: absolute;
+    display: flex;
+    background-color: var(--white);
+    border: .1rem solid var(--black);
+}
 .btn-frame{
     display: flex;
     justify-content: center;
@@ -45,7 +50,7 @@ button{
 }
 
 
-.close-btn{
+#close-btn{
     width: 3rem;
     height: 3rem;
     display: flex;
@@ -54,28 +59,28 @@ button{
     background-color: var(--white);
     border: .1rem solid var(--black);
 }
-.close-btn:hover{
+#close-btn:hover{
     background-color: var(--delete);
     border-color: var(--delete);
     cursor: pointer;
 }
-.close-btn:active{
+#close-btn:active{
     background-color: var(--delete);
     border-color: var(--delete);
     cursor: pointer;
 }
-.close-btn:focus{
+#close-btn:focus{
     background-color: var(--delete);
     border-color: var(--delete);
 }
-.close-btn > object{
+#close-btn > object{
     width: 3rem;
     height: 3rem;
     pointer-events: none;
 }
 
 
-.submit-btn{
+button[type="submit"]{
     margin: clamp(1rem, 5vh, 2rem) 0 0 0;
     padding: clamp(.5rem, 3vh, 1rem) clamp(3rem, 5vw, 5rem);
     display: inline-block;
@@ -83,26 +88,26 @@ button{
     border: .1rem solid var(--grey);
     border-radius: .5rem;
 }
-.submit-btn:hover{
+button[type="submit"]:hover{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
     cursor: pointer;
 }
-.submit-btn:active{
+button[type="submit"]:active{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
     cursor: pointer;
 }
-.submit-btn:focus{
+button[type="submit"]:focus{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
 }
 
 
-.delete-btn{
+#delete-book-btn{
     padding: 1rem 2.4rem;
     display: inline-block;
     background-color: var(--white);
@@ -110,44 +115,46 @@ button{
     border-radius: .5rem;
     font-size: 1.5rem
 }
-.delete-btn:hover{
+#delete-book-btn:hover{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
     cursor: pointer;
 }
-.delete-btn:active{
+#delete-book-btn:active{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
     cursor: pointer;
 }
-.delete-btn:focus{
+#delete-book-btn:focus{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
 }
 
-.add-book-popup{
+#add-book-modal{
     margin: 0 auto 3rem auto;
     padding: clamp(2rem, 5vh, 3rem);
     width: min(80%, 30rem);
-    position: absolute;
     top: min(10vh, 40rem);
     left: 0;
     right: 0;
-    display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    background-color: var(--white);
-    border: .1rem solid var(--black);
 }
-.add-book-title{
+#add-book-modal > #close-btn{
+    position: absolute;
+    top: clamp(.5rem, 5vh, 1rem);
+    right: clamp(.5rem, 5vh, 1rem);
+}
+#add-book-title{
     padding: 0 0 clamp(.5rem, 5vh, 1rem) 0;
     font-size: clamp(1.5rem, 3vw, 1.8rem);
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
+
 .input-frame{
     padding: clamp(.5rem, 5vh, 1rem) 0;
     display: flex;
@@ -179,11 +186,6 @@ input::-webkit-file-upload-button:hover{
 }
 .input-frame > input[type='file'], .input-frame > select:hover{
     cursor: pointer;
-}
-.add-book-popup > .close-btn{
-    position: absolute;
-    top: clamp(.5rem, 5vh, 1rem);
-    right: clamp(.5rem, 5vh, 1rem);
 }
 
 
@@ -221,55 +223,51 @@ input::-webkit-file-upload-button:hover{
 }
 
 
-.book-info-popup{
+#book-info-modal{
     margin: 0 auto;
     padding: clamp(.5rem, 5vh, 1rem);
     width: 14.5rem;
-    position: fixed;
     top: 30vh;
     left: 0;
     right: 0;
-    display: flex;
     flex-flow: column wrap;
-    background-color: var(--white);
-    border: .1rem solid var(--black);
 }
-.book-info-popup > .close-btn{
+#book-info-modal > #close-btn{
     width: 2rem;
     height: 2rem;
     position: absolute;
     top: clamp(.5rem, 5vh, 1rem);
     right: clamp(.5rem, 5vh, 1rem);
 }
-.book-info-popup > .close-btn > object{
+#book-info-modal > #close-btn > object{
     width: 2rem;
     height: 2rem;
 }
-.book-title{
+#book-info-modal > form > .input-frame > select{
+    margin: 0 auto;
+    width: 85%;
+    font-size: 1.2rem;
+}
+#book-info-modal > form > .btn-frame{
+    flex-flow: column wrap;
+}
+#book-info-modal > form > .btn-frame > #submit-change-btn{
+    margin-top: 1rem;
+    padding: 1rem 3.2rem;
+    font-size: 1.5rem;
+}
+#book-title{
     width: 9rem;
     font-size: clamp(1.8rem, 5vw, 2rem);
     overflow: auto;
     white-space: nowrap;
 }
-.book-author, .book-pages{
+#book-author, #book-pages{
     width: 100%;
     margin: clamp(.5rem, 5vh, 1rem) 0 0 0;
     font-size: 1.2rem;
     overflow: auto;
     white-space: nowrap;
-}
-.book-info-popup > form > .input-frame > select{
-    margin: 0 auto;
-    width: 85%;
-    font-size: 1.2rem;
-}
-.book-info-popup > form > .btn-frame{
-    flex-flow: column wrap;
-}
-.book-info-popup > form > .btn-frame > .submit-btn{
-    margin-top: 1rem;
-    padding: 1rem 3.2rem;
-    font-size: 1.5rem;
 }
 
 
@@ -291,7 +289,7 @@ footer{
 }
 
 
-.hide{
+.active{
     display: none;
 }
 

@@ -12,12 +12,12 @@
         <title>Remind</title>
     </head>
     <body>
-        <div class="overlay hide"></div>
+        <div class="overlay active"></div>
 
-        <div class="add-book-popup hide">
-            <span class="add-book-title">Add New Book</span>
+        <div id="add-book-modal" class="modal active">
+            <span id="add-book-title">Add New Book</span>
 
-            <button class="close-btn">
+            <button id="close-btn">
                 <object data="img/exit-icon.svg" type="image/svg+xml" ></object>
             </button>
 
@@ -53,46 +53,52 @@
                 </div>
 
                 <div class="btn-frame">
-                    <button id='subm-form-btn' type="submit" class="submit-btn">Submit</button>
+                    <button id='submit-book-btn' type="submit">Submit</button>
                 </div>
             </form>
 
         </div>
 
-        <div class="main-frame">
-            <main>
-                <div class="title-frame">
-                    <object class="webpage-icon" data="img/remind-icon.svg" type="image/svg+xml"></object>
-                    <h1 class="webpage-title">Remind</h1>
-                </div>
+        <main>
+            <div class="title-frame">
+                <object class="webpage-icon" data="img/remind-icon.svg" type="image/svg+xml"></object>
+                <h1 class="webpage-title">Remind</h1>
+            </div>
 
-                    <div class="book-info-popup hide">
-                        <h2 id='book-title' class="book-title">Dune</h2>
-                        <button class="close-btn"><object data="img/exit-icon.svg" type="image/svg+xml"></object></button>
-                        <span id='book-author' class="book-author">By Frank Herbert</span>
-                        <span id="book-pages" class="book-pages">412 pages in total</span>
+            <div class="book-frame">
+                
+            </div>
 
-                        <form id='book-status-form' action="#" method="post">
-                            <div class="input-frame">
-                                <select id="status" name="book-status" required>
-                                    <option value="">-Select Status-</option>
-                                    <option value="Read">Read</option>
-                                    <option value="In Progress">In Progress</option>
-                                    <option value="Not Read">Not Read</option>
-                                </select>
-                            </div>
-                            
-                            <div class="btn-frame">
-                                <button id='delete-book-btn' class="delete-btn">Delete</button>
-                                <button id='subm-chng-btn' type="submit" class="submit-btn hide">Save</button>
-                            </div>
-                        </form>
+            <div id="book-info-modal" class="modal active">
+                <h2 id='book-title'>Dune</h2>
+                <button id="close-btn">
+                        <object data="img/exit-icon.svg" type="image/svg+xml"></object>
+                </button>
+                <span id='book-author'>By Frank Herbert</span>
+                <span id="book-pages">412 pages in total</span>
+
+                <form id='book-status-form' action="#" method="post">
+                    <div class="input-frame">
+                        <select id="status" name="book-status" required>
+                            <option value="">-Select Status-</option>
+                            <option value="Read">Read</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Not Read">Not Read</option>
+                        </select>
                     </div>
-                </div>
-            </main>
-            <footer>
-                <span class="notice-text">Built by <a href="https://github.com/keanedalisay">Ⓒ Keane Dalisay</a>. Licensed under <a href="https://choosealicense.com/licenses/mit/">MIT</a>.</span>
-            </footer>
-        </div>
+                        
+                    <div class="btn-frame">
+                        <button id='delete-book-btn'>Delete</button>
+                        <button id='submit-change-btn' type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+
+        </main>
+
+        <footer>
+            <span class="notice-text">Built by <a href="https://github.com/keanedalisay">Ⓒ Keane Dalisay</a>. Licensed under <a href="https://choosealicense.com/licenses/mit/">MIT</a>.</span>
+        </footer>
+       
     </body>
 </html>
