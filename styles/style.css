@@ -54,6 +54,7 @@ button{
     display: flex;
     background-color: var(--white);
     border: .1rem solid var(--black);
+    z-index: 2;
 }
 .btn-frame{
     display: flex;
@@ -149,9 +150,11 @@ button[type="submit"]:focus{
     margin: 0 auto 3rem auto;
     padding: clamp(2rem, 5vh, 3rem);
     width: min(80%, 30rem);
-    top: min(10vh, 40rem);
+    position: absolute;
+    top: max(10rem, 30vw);
     left: 0;
     right: 0;
+    display: none;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
@@ -206,17 +209,7 @@ input::-webkit-file-upload-button:hover{
     width: min(100%, 60rem);
     height: max(80vw, 40rem);
 }
-.book-frame::before{
-    content: '';
-    margin: 0 auto;
-    width: 80%;
-    height: .2rem;
-    position: relative;
-    top: 3rem;
-    display: block;
-    background: var(--black);
-    border-radius: 10%;
-}.book-frame::after{
+.book-frame::before, .book-frame::after{
     content: '';
     margin: 0 auto;
     width: 80%;
@@ -302,6 +295,7 @@ input::-webkit-file-upload-button:hover{
     top: 30vh;
     left: 0;
     right: 0;
+    display: none;
     flex-flow: column wrap;
 }
 #book-info-modal > #close-btn{
@@ -363,7 +357,7 @@ footer{
 
 
 .active{
-    display: none;
+    display: flex !important;
 }
 
 .display-book{
@@ -379,9 +373,11 @@ footer{
 
 .overlay{
     position: fixed;
+    display: none;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: var(--overlay);
+    background: var(--overlay);
+    z-index: 1;
 }
