@@ -1,39 +1,32 @@
 const overlay = document.getElementById('overlay');
 
-const toggle = (() => {
-    class Toggle {
+function toggleTabIndex(){
+    const books = document.querySelectorAll('.book');
+    books.forEach(book => {
 
-        tabIndex(){
-            const books = document.querySelectorAll('.book');
-            books.forEach(book => {
+        if (book.getAttribute('tabindex') === 0 || 
+        book.getAttribute('tabindex') === null){
 
-                if (book.getAttribute('tabindex') === 0 || 
-                book.getAttribute('tabindex') === null){
-
-                    book.setAttribute('tabindex', -1);
-                }
-                else {
-                    book.setAttribute('tabindex', 0);
-                }
-            });
-
-            const links = document.querySelectorAll('a');
-            links.forEach(link => {
-
-                if (link.getAttribute('tabindex') === 0 || 
-                link.getAttribute('tabindex') === null){
-
-                    link.setAttribute('tabindex', -1);
-                }
-                else {
-                    link.setAttribute('tabindex', 0);
-                }
-            });
+            book.setAttribute('tabindex', -1);
         }
-    }
+        else {
+            book.setAttribute('tabindex', 0);
+        }
+    });
 
-    return new Toggle();
-})();    
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+
+        if (link.getAttribute('tabindex') === 0 || 
+        link.getAttribute('tabindex') === null){
+
+            link.setAttribute('tabindex', -1);
+        }
+        else {
+            link.setAttribute('tabindex', 0);
+        }
+    });
+}
 
 
 const display = (() => {
@@ -44,25 +37,18 @@ const display = (() => {
             addBookModal.classList.toggle('active');
             overlay.classList.toggle('active');
 
-            toggle.tabIndex();
+            toggleTabIndex();
         }
     }
 
     return new Display();
 })();
 
-const close = (() => {
-    class Close{
-
-        modal(e){
-            e.path[1].classList.toggle('active');
-            overlay.classList.toggle('active');
-            toggle.tabIndex();
-        }
-    }
-
-    return new Close();
-})();
+function closeModal(e){
+    e.path[1].classList.toggle('active');
+    overlay.classList.toggle('active');
+    toggleTabIndex();
+};
 
 const buttons = (() => {
 
@@ -71,7 +57,7 @@ const buttons = (() => {
 
     const closeButtons = document.querySelectorAll('.close-btn');
     closeButtons.forEach(button => {
-            button.addEventListener('click', close.modal);
+            button.addEventListener('click', closeModal);
         });
 })();
 
