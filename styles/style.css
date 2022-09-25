@@ -63,7 +63,7 @@ button{
 }
 
 
-#close-btn{
+.close-btn{
     width: 3rem;
     height: 3rem;
     display: flex;
@@ -72,21 +72,21 @@ button{
     background-color: var(--white);
     border: .1rem solid var(--black);
 }
-#close-btn:hover{
+.close-btn:hover{
     background-color: var(--delete);
     border-color: var(--delete);
     cursor: pointer;
 }
-#close-btn:active{
+.close-btn:active{
     background-color: var(--delete);
     border-color: var(--delete);
     cursor: pointer;
 }
-#close-btn:focus{
+.close-btn:focus{
     background-color: var(--delete);
     border-color: var(--delete);
 }
-#close-btn > object{
+.close-btn > object{
     width: 3rem;
     height: 3rem;
     pointer-events: none;
@@ -159,7 +159,7 @@ button[type="submit"]:focus{
     justify-content: center;
     align-items: center;
 }
-#add-book-modal > #close-btn{
+#add-book-modal > .close-btn{
     position: absolute;
     top: clamp(.5rem, 5vh, 1rem);
     right: clamp(.5rem, 5vh, 1rem);
@@ -186,6 +186,9 @@ button[type="submit"]:focus{
     border: .1rem solid var(--black);
     border-radius: .5rem;
     font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+.input-frame > input:focus, .input-frame > select:focus{
+    outline: .1rem solid var(--black);
 }
 input::-webkit-file-upload-button{
     margin-right: 1rem;
@@ -266,7 +269,7 @@ input::-webkit-file-upload-button:hover{
     height: 10rem;
     pointer-events: none;
 }
-.book:hover > img, .book:focus > img, .book:active{
+.book:hover > img, .book:focus > img, .book:active > img{
     opacity: 50%;
 }
 
@@ -379,7 +382,7 @@ footer{
     background-color: var(--nread);
 }
 
-.overlay{
+#overlay{
     position: fixed;
     display: none;
     top: 0;
