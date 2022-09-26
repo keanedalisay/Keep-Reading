@@ -45,7 +45,7 @@ const toggle = (() => {
             
             bookInfoModal.classList.add('active');
             overlay.classList.add('active');
-
+            
             toggleTabIndex();
         }
     }
@@ -56,7 +56,13 @@ const toggle = (() => {
 function closeModal(e){
     e.path[1].classList.toggle('active');
     overlay.classList.toggle('active');
+
     toggleTabIndex();
+
+    if (e.path[1].children[4].children[1].children[1] != undefined){
+        const saveChangeButton = e.path[1].children[4].children[1].children[1];
+        saveChangeButton.classList.remove('active');
+    }
 };
 
 const buttons = (() => {
@@ -85,8 +91,6 @@ const book = (() => {
         }
         getData(e){
             e.preventDefault();
-
-            const addBookForm = document.getElementById('add-book-form');
 
             const bTitle = addBookForm['title'].value;
             const bAuthor = addBookForm['author'].value;
@@ -152,6 +156,11 @@ const book = (() => {
             const bookStatusElem = newBookInfo.children[4].children[0].children[0];
             bookStatusElem.value = bStatus;
 
+            bookStatusElem.addEventListener('change', () => {
+                const saveChangeButton = document.querySelector(`.book > #${bTitle} > .book-status-form > .btn-frame > .submit-change-btn`);
+                saveChangeButton.classList.add('active');
+            })
+
             const bookRack = document.querySelector('.book-rack');
             for (const book of bookRack.children){
                 if (book.getAttribute('title') !== bTitle){
@@ -165,6 +174,14 @@ const book = (() => {
                     closeButtons.forEach(button => {
                             button.addEventListener('click', closeModal);
                     })
+
+                    const bookStatusForm = newBookInfo.children[4];
+                    const deleteBookButton = newBookInfo.children[4][1];
+
+                    console.log(deleteBookButton);
+                    console.log(bookStatusForm);
+                    deleteBookButton.addEventListener('click', deleteBook);
+                    bookStatusForm.addEventListener('submit', saveChange);
                 }
             }
         }
@@ -173,60 +190,48 @@ const book = (() => {
     return new Book();
 })();
 
-const forms = (() => {
-    const addBookForm = document.getElementById('add-book-form');
-    addBookForm.addEventListener('submit', book.getData);
-})();
+const addBookForm = document.getElementById('add-book-form');
+addBookForm.addEventListener('submit', book.getData);
 
-function submNewBookStat(e){
+function saveChange(e){
     e.preventDefault();
+    const bTitle = e.path[1].getAttribute('id');
+    const newBookStatus = e.target[0].value;
 
-    const titleVal = popups.bookInfoPopup.children['book-title'].textContent;
-    const statusVal = this['status'].value;
-
-    for (const book of bCollection){
-        if (book.bTitle != titleVal){
+    const bookRack = document.querySelector('.book-rack');
+    for (const book of bookRack.children){
+        if(book.getAttribute('title') != bTitle){
             continue;
-        } else {
-            book.bStatus = statusVal;
-            popups.bookInfoPopup.children['book-status-form']['status'].value = statusVal;
-
-            if (statusVal == 'Read') {
-                for (const elem of bookFrame.children){
-                    if (elem.title != titleVal){
-                        continue;
-                    } else {
-                        elem.classList.remove('in-progress');
-                        elem.classList.remove('not-read');
-                    }
-                }
-            } else if (statusVal == 'In Progress') {
-                for (const elem of bookFrame.children){
-                    if (elem.title != titleVal){
-                        continue;
-                    } else {
-                        elem.classList.add('in-progress');
-                        elem.classList.remove('not-read');
-                    }
-                }
-            } else if (statusVal == 'Not Read') {
-                for (const elem of bookFrame.children){
-                    if (elem.title != titleVal){
-                        continue;
-                    } else {
-                        elem.classList.remove('in-progress');
-                        elem.classList.add('not-read');
-                    }
-                }
-            } 
-
-            buttons.saveBtn.classList.add('hide');
-
-            popups.bookInfoPopup.classList.add('hide');
-            overlay.classList.add('hide');
-            
+        }
+        else {
+            e.target[0].value = newBookStatus;
+            if (newBookStatus === 'Read'){
+                book.classList.remove('in-progress');
+                book.classList.remove('not-read');
+            }
+            else if (newBookStatus === 'In Progress'){
+                book.classList.add('in-progress');
+                book.classList.remove('not-read');
+            }
+            else {
+                book.classList.add('not-read');
+                book.classList.remove('in-progress');
+            }
         }
     }
+
+    for (let index = 0; index < book.collection.length; index++){
+        if (book.collection[index].bTitle != bTitle){
+            continue;
+        }
+        else {
+            book.collection[index].bStatus = newBookStatus;
+        }
+    }
+
+    e.target[2].classList.remove('active');
+    e.path[1].classList.remove('active');
+    overlay.classList.remove('active');
 }
 
 function deleteBook(e){

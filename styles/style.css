@@ -342,6 +342,7 @@ input::-webkit-file-upload-button:hover{
     flex-flow: column wrap;
 }
 .book-info > form > .btn-frame > .submit-change-btn{
+    display: none;
     margin-top: 1rem;
     padding: 1rem 3.2rem;
     font-size: 1.5rem;
