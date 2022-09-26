@@ -151,7 +151,7 @@ button[type="submit"]:focus{
     padding: clamp(2rem, 5vh, 3rem);
     width: min(80%, 30rem);
     position: absolute;
-    top: max(10rem, 30vw);
+    top: min(10rem, 30vw);
     left: 0;
     right: 0;
     display: none;
@@ -210,7 +210,7 @@ input::-webkit-file-upload-button:hover{
 .book-frame{
     margin: 0 auto;
     width: min(100%, 60rem);
-    height: max(70vw, 40rem);
+    height: max(50vh, 40rem);
 }
 .book-frame::before, .book-frame::after{
     content: '';
@@ -237,7 +237,20 @@ input::-webkit-file-upload-button:hover{
     justify-content: space-evenly;
     align-items: center;
     gap: clamp(2rem, 5vh, 3rem);
-    overflow: scroll;
+    overflow-y: auto;
+}
+.book-rack::-webkit-scrollbar{
+    width: .2rem;
+    border-radius: 10%;
+}
+.book-rack::-webkit-scrollbar-track{
+    background: var(--white);
+}
+.book-rack::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+.book-rack::-webkit-scrollbar-thumb:hover, .book-rack::-webkit-scrollbar-thumb:active{
+    background: var(--grey);
 }
 
 @media screen and (min-width: 450px){
@@ -350,7 +363,7 @@ input::-webkit-file-upload-button:hover{
 
 footer{
     padding: clamp(2rem, 5vh, 3rem);
-    height: max(20vw, 10rem);
+    height: min(20vw, 8rem);
     display: flex;
     justify-content: center;
     align-items: center;
