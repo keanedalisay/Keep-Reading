@@ -120,7 +120,7 @@ button[type="submit"]:focus{
 }
 
 
-#delete-book-btn{
+.delete-book-btn{
     padding: 1rem 2.4rem;
     display: inline-block;
     background-color: var(--white);
@@ -128,19 +128,19 @@ button[type="submit"]:focus{
     border-radius: .5rem;
     font-size: 1.5rem
 }
-#delete-book-btn:hover{
+.delete-book-btn:hover{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
     cursor: pointer;
 }
-#delete-book-btn:active{
+.delete-book-btn:active{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
     cursor: pointer;
 }
-#delete-book-btn:focus{
+.delete-book-btn:focus{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
