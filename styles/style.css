@@ -299,7 +299,7 @@ input::-webkit-file-upload-button:hover{
 }
 
 
-#book-info-modal{
+.book-info{
     margin: 0 auto;
     padding: clamp(.5rem, 5vh, 1rem);
     width: 14.5rem;
@@ -309,37 +309,37 @@ input::-webkit-file-upload-button:hover{
     display: none;
     flex-flow: column wrap;
 }
-#book-info-modal > #close-btn{
+.book-info > .close-btn{
     width: 2rem;
     height: 2rem;
     position: absolute;
     top: clamp(.5rem, 5vh, 1rem);
     right: clamp(.5rem, 5vh, 1rem);
 }
-#book-info-modal > #close-btn > object{
+.book-info > .close-btn > object{
     width: 2rem;
     height: 2rem;
 }
-#book-info-modal > form > .input-frame > select{
+.book-info > form > .input-frame > select{
     margin: 0 auto;
     width: 85%;
     font-size: 1.2rem;
 }
-#book-info-modal > form > .btn-frame{
+.book-info > form > .btn-frame{
     flex-flow: column wrap;
 }
-#book-info-modal > form > .btn-frame > #submit-change-btn{
+.book-info > form > .btn-frame > .submit-change-btn{
     margin-top: 1rem;
     padding: 1rem 3.2rem;
     font-size: 1.5rem;
 }
-#book-title{
+.book-title{
     width: 9rem;
     font-size: clamp(1.8rem, 5vw, 2rem);
     overflow: auto;
     white-space: nowrap;
 }
-#book-author, #book-pages{
+.book-author, .book-pages{
     width: 100%;
     margin: clamp(.5rem, 5vh, 1rem) 0 0 0;
     font-size: 1.2rem;

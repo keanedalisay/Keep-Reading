@@ -56,6 +56,31 @@
                     <button id='submit-book-btn' type="submit">Submit</button>
                 </div>
             </form>
+
+            <div class="modal book-info">
+                <h2 class='book-title'>Dune</h2>
+                <button class="close-btn">
+                        <object data="img/exit-icon.svg" type="image/svg+xml"></object>
+                </button>
+                <span class='book-author'>By Frank Herbert</span>
+                <span class="book-pages">412 pages in total</span>
+
+                <form class='book-status-form' action="#" method="post">
+                    <div class="input-frame">
+                        <select class="status" name="book-status" required>
+                            <option value="">-Select Status-</option>
+                            <option value="Read">Read</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Not Read">Not Read</option>
+                        </select>
+                    </div>
+                        
+                    <div class="btn-frame">
+                        <button class='delete-book-btn'>Delete</button>
+                        <button class='submit-change-btn' type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <main>
@@ -69,33 +94,6 @@
 
             <div class="book-frame">
                 <div class="book-rack">
-                    <div class="book" tabindex="0">
-                        <img src="img/dune-cover.jpg">
-                        <div id="book-info-modal" class="modal">
-                            <h2 id='book-title'>Dune</h2>
-                            <button class="close-btn">
-                                    <object data="img/exit-icon.svg" type="image/svg+xml"></object>
-                            </button>
-                            <span id='book-author'>By Frank Herbert</span>
-                            <span id="book-pages">412 pages in total</span>
-            
-                            <form id='book-status-form' action="#" method="post">
-                                <div class="input-frame">
-                                    <select id="status" name="book-status" required>
-                                        <option value="">-Select Status-</option>
-                                        <option value="Read">Read</option>
-                                        <option value="In Progress">In Progress</option>
-                                        <option value="Not Read">Not Read</option>
-                                    </select>
-                                </div>
-                                    
-                                <div class="btn-frame">
-                                    <button id='delete-book-btn'>Delete</button>
-                                    <button id='submit-change-btn' type="submit">Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                     <button id="add-book-btn" class="book">
                         <span>Add Book</span>
                         <svg version="1.1" viewBox="0 0 752 752" xmlns="http://www.w3.org/2000/svg">
