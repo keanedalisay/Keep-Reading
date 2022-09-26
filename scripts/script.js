@@ -178,8 +178,6 @@ const book = (() => {
                     const bookStatusForm = newBookInfo.children[4];
                     const deleteBookButton = newBookInfo.children[4][1];
 
-                    console.log(deleteBookButton);
-                    console.log(bookStatusForm);
                     deleteBookButton.addEventListener('click', deleteBook);
                     bookStatusForm.addEventListener('submit', saveChange);
                 }
@@ -237,31 +235,28 @@ function saveChange(e){
 function deleteBook(e){
     e.preventDefault();
 
-    popups.bookInfoPopup.classList.add('hide');
-    overlay.classList.add('hide');
+    const bTitle = e.path[4].getAttribute('title');
+    console.log(bTitle)
+    const bookRack = document.querySelector('.book-rack');
     
+    e.path[1].classList.remove('active');
+    overlay.classList.remove('active');
 
-    const titleLabel = popups.bookInfoPopup.children['book-title'];
-
-    for (const book of bCollection){
-        if (book.bTitle != titleLabel.textContent){
+    for (const book of bookRack.children){
+        if (book.getAttribute('title') !== bTitle){
             continue;
-        } else {
-            for (let i = 0; i < bookFrame.children.length; i++){
-                if (bookFrame.children[i].title != book.bTitle) continue; 
-                else {
-                    bookFrame.children[i].remove();
-
-                    const bIndex = bCollection.findIndex(book => {
-                        return book.bTitle == titleLabel.textContent;
-                    });
-                    bCollection.splice(bIndex, 1);
-
-                    displayBookOrNot();
-
-                    console.log(bCollection);
-                }
-            }
+        }
+        else {
+            book.remove();
+        }
+    }
+    
+    for (let index = 0; index < book.collection.length; index++){
+        if (book.collection[index].bTitle !== bTitle){
+            continue;
+        }
+        else {
+            book.collection.splice(index, 1);
         }
     }
 }
