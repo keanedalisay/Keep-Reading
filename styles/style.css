@@ -353,11 +353,25 @@ input::-webkit-file-upload-button:hover{
     padding: 1rem 3.2rem;
     font-size: 1.5rem;
 }
+
 .book-title{
     width: 9rem;
     font-size: clamp(1.8rem, 5vw, 2rem);
     overflow: auto;
     white-space: nowrap;
+}
+.book-title::-webkit-scrollbar{
+    height: .3rem;
+    border-radius: 20%;
+}
+.book-title::-webkit-scrollbar-track{
+    background: var(--white);
+}
+.book-title::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+.book-title::-webkit-scrollbar-thumb:hover, .book-title::-webkit-scrollbar-thumb:active{
+    background: var(--grey);
 }
 .book-author, .book-pages{
     width: 100%;
@@ -365,6 +379,20 @@ input::-webkit-file-upload-button:hover{
     font-size: 1.2rem;
     overflow: auto;
     white-space: nowrap;
+}
+.book-author::-webkit-scrollbar, .book-pages::-webkit-scrollbar{
+    height: .3rem;
+    border-radius: 20%;
+}
+.book-author::-webkit-scrollbar-track, .book-pages::-webkit-scrollbar-track{
+    background: var(--white);
+}
+.book-author::-webkit-scrollbar-thumb, .book-pages::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+.book-author::-webkit-scrollbar-thumb:hover, .book-author::-webkit-scrollbar-thumb:active,
+.book-pages::-webkit-scrollbar-thumb:hover, .book-pages::-webkit-scrollbar-thumb:active{
+    background: var(--grey);
 }
 
 
