@@ -40,13 +40,16 @@ const toggle = (() => {
             toggleTabIndex();
         }
         bookInfoModal(e){
-            const bookInfoModal = e.target.children[1];
-            if (bookInfoModal == undefined) return 0;
-            
-            bookInfoModal.classList.add('active');
-            overlay.classList.add('active');
-            
-            toggleTabIndex();
+            if ((e.type == "keydown" && e.code == "Space") || (e.type == "keydown" && e.code == "Enter") || (e.type == "click")){
+                const bookInfoModal = e.target.children[1];
+                if (bookInfoModal == undefined) return 0;
+                
+                bookInfoModal.classList.add('active');
+                overlay.classList.add('active');
+                
+                toggleTabIndex();
+            }
+            else return 0;
         }
     }
 
@@ -169,6 +172,7 @@ const book = (() => {
                 else{
                     book.appendChild(newBookInfo);
                     book.addEventListener('click', toggle.bookInfoModal);
+                    book.addEventListener('keydown', toggle.bookInfoModal);
 
                     const closeButtons = document.querySelectorAll('.close-btn');
                     closeButtons.forEach(button => {
