@@ -14,9 +14,9 @@ It is essentially a book library. You get to:
 * Delete that book by pressing a button.
 * Change the status of that book and saving it.
 
-By looking at the browser console, you can also see the 'bCollection' array (which I logged in the console intentionally) where each book is stored in its own object. 
+By looking at the browser console, you can also see the 'book.collection' array (which I logged in the console intentionally) where each book is stored in its own object. 
 
-You can access that array any time you want, just mention the name of the array, the index of the book you are finding, and the name of the object property you want to access.
+You can access that array any time you want, just mention the 'book' object and the property 'collection' to access it, the index number of the book you are finding, and the name of the object property you want to access.
 
 *As of writing 26/08/2022*, I have not added a type of storage for this project just yet. If you refresh the page, the books you added **will** be gone completely so be careful.
 
@@ -26,7 +26,7 @@ Visit this project through this link: https://keanedalisay.github.io/library-TOP
 
 And here is a preview of it with some books that I added:
 
-![image](https://user-images.githubusercontent.com/101083161/186791585-41263633-f0dd-4130-a7b5-ef7c8d14a3df.png)
+
 
 ## License
 
