@@ -26,6 +26,9 @@ Visit this project through this link: https://keanedalisay.github.io/library-TOP
 
 And here is a preview of it with some books that I added:
 
+![image](https://user-images.githubusercontent.com/101083161/192414182-90b6dff7-b004-41d7-9641-b74b2ba50fa0.png)
+
+![image](https://user-images.githubusercontent.com/101083161/192414297-f849a948-b1e0-4e69-8a84-0de92eb100d7.png)
 
 
 ## License
