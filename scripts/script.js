@@ -61,11 +61,24 @@ function closeModal(e){
     overlay.classList.toggle('active');
 
     toggleTabIndex();
-
+    
     if (e.path[1].children[4].children[1].children[1] != undefined){
         const saveChangeButton = e.path[1].children[4].children[1].children[1];
         saveChangeButton.classList.remove('active');
+
+        for (let index = 0; index < book.collection.length; index++){
+            if (e.path[1].getAttribute('id') !== book.collection[index].bTitle){
+                continue;
+            }
+            else {
+                if (e.path[1].children[4][0].value !== book.collection[index].bStatus){
+                    e.path[1].children[4][0].value = book.collection[index].bStatus;
+                }
+            }
+        }
     }
+
+    
 };
 
 const buttons = (() => {
@@ -159,8 +172,8 @@ const book = (() => {
             const bookStatusElem = newBookInfo.children[4].children[0].children[0];
             bookStatusElem.value = bStatus;
 
-            bookStatusElem.addEventListener('change', () => {
-                const saveChangeButton = document.querySelector(`.book > #${bTitle} > .book-status-form > .btn-frame > .submit-change-btn`);
+            bookStatusElem.addEventListener('change', (e) => {
+                const saveChangeButton = e.path[2][2];
                 saveChangeButton.classList.add('active');
             })
 
