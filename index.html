@@ -8,14 +8,14 @@
         <link href="styles/style.css" rel="stylesheet">
         <link href="styles/common.css" rel="stylesheet">
         <script src="scripts/script.js" async="false"></script>
-        
+
         <title>Remind</title>
     </head>
     <body>
-        <div class="overlay hide"></div>
+        <div id ="overlay"></div>
 
-        <div class="add-book-popup hide">
-            <span class="add-book-title">Add New Book</span>
+        <div id="add-book-modal" class="modal">
+            <span id="add-book-title">Add New Book</span>
 
             <button class="close-btn">
                 <object data="img/exit-icon.svg" type="image/svg+xml" ></object>
@@ -53,56 +53,68 @@
                 </div>
 
                 <div class="btn-frame">
-                    <button id='subm-form-btn' type="submit" class="submit-btn">Submit</button>
+                    <button id='submit-book-btn' type="submit">Submit</button>
                 </div>
             </form>
 
+            <div class="modal book-info">
+                <h2 class='book-title'>Dune</h2>
+                <button class="close-btn">
+                        <object data="img/exit-icon.svg" type="image/svg+xml"></object>
+                </button>
+                <span class='book-author'>By Frank Herbert</span>
+                <span class="book-pages">412 pages in total</span>
+
+                <form class='book-status-form' action="#" method="post">
+                    <div class="input-frame">
+                        <select class="status" name="book-status" required>
+                            <option value="">-Select Status-</option>
+                            <option value="Read">Read</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Not Read">Not Read</option>
+                        </select>
+                    </div>
+                        
+                    <div class="btn-frame">
+                        <button class='delete-book-btn'>Delete</button>
+                        <button class='submit-change-btn' type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <div class="main-frame">
-            <main>
-                <div class="title-frame">
-                    <object class="webpage-icon" data="img/remind-icon.svg" type="image/svg+xml"></object>
-                    <h1 class="webpage-title">Remind</h1>
+        <main>
+            <div class="title-frame">
+                <object class="webpage-icon" data="img/remind-icon.svg" type="image/svg+xml"></object>
+                <h1 class="webpage-title">Remind</h1>
+            </div>
+            <div class="subtitle-frame">
+                <h2 class="webpage-subtitle">Got a book? Remind yourself</h2>
+            </div>
+
+            <div class="book-frame">
+                <div class="book-rack">
+                    <button id="add-book-btn" class="book">
+                        <span>Add Book</span>
+                        <svg version="1.1" viewBox="0 0 752 752" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                             <clipPath id="a">
+                              <path d="m139.21 139.21h473.58v473.58h-473.58z"/>
+                             </clipPath>
+                            </defs>
+                            <g clip-path="url(#a)">
+                             <path d="m376 139.21c-62.801 0-123.03 24.949-167.43 69.355s-69.355 104.63-69.355 167.43 24.949 123.03 69.355 167.44 104.63 69.355 167.43 69.355 123.03-24.949 167.44-69.355 69.355-104.64 69.355-167.44-24.949-123.03-69.355-167.43-104.64-69.355-167.44-69.355zm113.92 249.95h-100.77v101.03c0 7.2656-5.8906 13.156-13.156 13.156s-13.152-5.8906-13.152-13.156v-101.03h-100.77c-7.2656 0-13.152-5.8906-13.152-13.156s5.8867-13.152 13.152-13.152h100.77v-100.77c0-7.2656 5.8867-13.152 13.152-13.152s13.156 5.8867 13.156 13.152v100.77h101.03c7.2656 0 13.156 5.8867 13.156 13.152s-5.8906 13.156-13.156 13.156z"/>
+                            </g>
+                           </svg>  
+                    </button>
                 </div>
+            </div>
 
-                <div class="btn-frame">
-                    <button class="add-book-btn">Add New Book</button>
-                </div>
+        </main>
 
-                <div class="book-frame">
-                    <div class="no-book-popup">
-                        <h2 class="no-book-title">Need to Remind of Something?</h2>
-                        <p class="no-book-subtitle">Click the button above to remind yourself.</p>
-                    </div>
-
-                    <div class="book-info-popup hide">
-                        <h2 id='book-title' class="book-title">Dune</h2>
-                        <button class="close-btn"><object data="img/exit-icon.svg" type="image/svg+xml"></object></button>
-                        <span id='book-author' class="book-author">By Frank Herbert</span>
-                        <span id="book-pages" class="book-pages">412 pages in total</span>
-
-                        <form id='book-status-form' action="#" method="post">
-                            <div class="input-frame">
-                                <select id="status" name="book-status" required>
-                                    <option value="">-Select Status-</option>
-                                    <option value="Read">Read</option>
-                                    <option value="In Progress">In Progress</option>
-                                    <option value="Not Read">Not Read</option>
-                                </select>
-                            </div>
-                            
-                            <div class="btn-frame">
-                                <button id='delete-book-btn' class="delete-btn">Delete</button>
-                                <button id='subm-chng-btn' type="submit" class="submit-btn hide">Save</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </main>
-            <footer>
-                <span class="notice-text">Built by <a href="https://github.com/keanedalisay">Ⓒ Keane Dalisay</a>. Licensed under <a href="https://choosealicense.com/licenses/mit/">MIT</a>.</span>
-            </footer>
-        </div>
+        <footer>
+            <span class="notice-text">Built by <a href="https://github.com/keanedalisay">Ⓒ Keane Dalisay</a>. Licensed under <a href="https://choosealicense.com/licenses/mit/">MIT</a>.</span>
+        </footer>
+       
     </body>
 </html>

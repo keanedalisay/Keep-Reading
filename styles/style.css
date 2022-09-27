@@ -9,6 +9,11 @@
 html{
     font-size: 10px;
 }
+main{
+    margin: 0 auto;
+    padding: clamp(2rem, 5vh, 3rem) 0;
+    width: min(100%, 80rem);
+}
 form{
     width: 100%;
 }
@@ -17,54 +22,44 @@ button{
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
 
-.main-frame{
-    margin: 0 auto;
-    padding: clamp(2rem, 5vh, 3rem) 0;
-    width: min(100%, 80rem);
-}
-
 .title-frame{
+    height: max(18vw, 10rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subtitle-frame{
+    height: max(15vw, 10rem);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .webpage-icon{
-    width: clamp(5rem, 15vw, 10rem);
-    height: clamp(10rem, 20vh, 20rem);
+    width: clamp(5rem, 15vw, 20rem);
+    height: clamp(5rem, 15vw, 20rem);
 }
 .webpage-title{
     display: inline-block;
-    font-size: clamp(3rem, 8vw, 7rem);
+    font-size: clamp(3rem, 8vw, 12rem);
+    font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
+}
+.webpage-subtitle{
+    display: inline-block;
+    font-size: clamp(1rem, 4vw, 2.5rem);
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
 
+.modal{
+    position: absolute;
+    display: flex;
+    background-color: var(--white);
+    border: .1rem solid var(--black);
+    z-index: 2;
+}
 .btn-frame{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.add-book-btn{
-    padding: clamp(1rem, 3vh, 1.5rem) clamp(2rem, 5vw, 3.5rem);
-    background-color: var(--white);
-    border: .1rem solid var(--grey);
-    border-radius: .5rem;
-}
-.add-book-btn:hover{
-    background-color: var(--black);
-    border-color: var(--black);
-    color: var(--white);
-    cursor: pointer;
-}
-.add-book-btn:active{
-    background-color: var(--black);
-    border-color: var(--black);
-    color: var(--white);
-    cursor: pointer;
-}
-.add-book-btn:focus{
-    background-color: var(--black);
-    border-color: var(--black);
-    color: var(--white);
 }
 
 
@@ -98,7 +93,7 @@ button{
 }
 
 
-.submit-btn{
+button[type="submit"]{
     margin: clamp(1rem, 5vh, 2rem) 0 0 0;
     padding: clamp(.5rem, 3vh, 1rem) clamp(3rem, 5vw, 5rem);
     display: inline-block;
@@ -106,26 +101,26 @@ button{
     border: .1rem solid var(--grey);
     border-radius: .5rem;
 }
-.submit-btn:hover{
+button[type="submit"]:hover{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
     cursor: pointer;
 }
-.submit-btn:active{
+button[type="submit"]:active{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
     cursor: pointer;
 }
-.submit-btn:focus{
+button[type="submit"]:focus{
     background-color: var(--black);
     border-color: var(--black);
     color: var(--white);
 }
 
 
-.delete-btn{
+.delete-book-btn{
     padding: 1rem 2.4rem;
     display: inline-block;
     background-color: var(--white);
@@ -133,44 +128,48 @@ button{
     border-radius: .5rem;
     font-size: 1.5rem
 }
-.delete-btn:hover{
+.delete-book-btn:hover{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
     cursor: pointer;
 }
-.delete-btn:active{
+.delete-book-btn:active{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
     cursor: pointer;
 }
-.delete-btn:focus{
+.delete-book-btn:focus{
     background-color: var(--delete);
     border-color: var(--delete);
     color: var(--white);
 }
 
-.add-book-popup{
+#add-book-modal{
     margin: 0 auto 3rem auto;
     padding: clamp(2rem, 5vh, 3rem);
     width: min(80%, 30rem);
     position: absolute;
-    top: min(10vh, 40rem);
+    top: max(10rem, 30vw);
     left: 0;
     right: 0;
-    display: flex;
+    display: none;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    background-color: var(--white);
-    border: .1rem solid var(--black);
 }
-.add-book-title{
+#add-book-modal > .close-btn{
+    position: absolute;
+    top: clamp(.5rem, 5vh, 1rem);
+    right: clamp(.5rem, 5vh, 1rem);
+}
+#add-book-title{
     padding: 0 0 clamp(.5rem, 5vh, 1rem) 0;
     font-size: clamp(1.5rem, 3vw, 1.8rem);
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
+
 .input-frame{
     padding: clamp(.5rem, 5vh, 1rem) 0;
     display: flex;
@@ -188,6 +187,9 @@ button{
     border-radius: .5rem;
     font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
+.input-frame > input:focus, .input-frame > select:focus{
+    outline: .1rem solid var(--black);
+}
 input::-webkit-file-upload-button{
     margin-right: 1rem;
     background-color: var(--white);
@@ -203,98 +205,173 @@ input::-webkit-file-upload-button:hover{
 .input-frame > input[type='file'], .input-frame > select:hover{
     cursor: pointer;
 }
-.add-book-popup > .close-btn{
-    position: absolute;
-    top: clamp(.5rem, 5vh, 1rem);
-    right: clamp(.5rem, 5vh, 1rem);
-}
 
 
 .book-frame{
     margin: 0 auto;
-    width: min(100%, 60rem);
+    width: min(100%, 80rem);
+    height: max(60vh, 40rem);
+}
+.book-frame::before, .book-frame::after{
+    content: '';
+    margin: 0 auto;
+    width: 80%;
+    height: .2rem;
+    position: relative;
+    display: block;
+    background: var(--black);
+    border-radius: 10%;
+}
+.book-frame::before{
+    top: -1rem;
+}
+.book-frame::after{
+    top: 1rem;
+}
+.book-rack{
     padding: clamp(2rem, 5vh, 3rem);
+    width: 100%;
+    height: 100%;
     display: grid;
+    grid-template-columns: repeat(2, auto);
     justify-content: space-evenly;
     align-items: center;
     gap: clamp(2rem, 5vh, 3rem);
+    overflow-y: auto;
 }
-.no-book-popup{
-    width: 100%;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    border-top: .1rem solid var(--grey);
-    border-bottom: .1rem solid var(--grey);
+.book-rack::-webkit-scrollbar{
+    width: .2rem;
+    border-radius: 10%;
 }
-.no-book-title{
-    width: min(100%, 35rem);
-    margin: clamp(3rem, 5vh, 5rem) 0;
-    font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    font-size: clamp(2rem, 3vw, 3rem);
+.book-rack::-webkit-scrollbar-track{
+    background: var(--white);
 }
-.no-book-subtitle{
-    margin: clamp(1rem, 5vh, 2rem) 0;
-    width: min(100%, 30rem);
-    text-align: center;
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+.book-rack::-webkit-scrollbar-thumb{
+    background: var(--black);
 }
+.book-rack::-webkit-scrollbar-thumb:hover, .book-rack::-webkit-scrollbar-thumb:active{
+    background: var(--grey);
+}
+
+@media screen and (min-width: 450px){
+    .book-rack{
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media screen and (min-width: 650px){
+    .book-rack{
+        grid-template-columns: repeat(4, auto);
+    }
+}
+
+@media screen and (min-width: 650px){
+    .book-rack{
+        grid-template-columns: repeat(4, auto);
+    }
+}
+
 .book{
     padding: 1rem;
+    position: relative;
     background-color: var(--white);
     border: .2rem solid var(--black);
     border-radius: 0 .5rem .5rem 0rem;
     box-shadow: -.2rem .3rem 0 .1rem var(--black);
 }
-.book:hover{
+.book:hover, .book:focus, .book:active{
     background-color: var(--black);
     cursor: pointer;
-}
-.book:active{
-    background-color: var(--black);
-    cursor: pointer;
-}
-.book:focus{
-    background-color: var(--black);
 }
 .book > img{
     width: 8rem;
     height: 10rem;
     pointer-events: none;
 }
+.book:hover > img, .book:focus > img, .book:active > img{
+    opacity: 50%;
+}
+
+#add-book-btn{
+    width: 10.4rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+#add-book-btn > span{
+    margin-top: 1.1rem;
+    height: 2.1rem;
+    font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+}
+#add-book-btn > svg{
+    width: 7rem;
+    height: 7rem;
+}
+#add-book-btn:hover, #add-book-btn:focus, #add-book-btn:active{
+    color: var(--white);
+}
+#add-book-btn:hover > svg, #add-book-btn:focus > svg, #add-book-btn:active > svg{
+    fill: var(--white);
+    cursor: pointer;
+}
 
 
-.book-info-popup{
+.book-info{
     margin: 0 auto;
     padding: clamp(.5rem, 5vh, 1rem);
     width: 14.5rem;
-    position: fixed;
-    top: 30vh;
-    left: 0;
-    right: 0;
-    display: flex;
+    position: absolute;
+    top: 10rem;
+    left: -2.2rem;
+    display: none;
     flex-flow: column wrap;
-    background-color: var(--white);
-    border: .1rem solid var(--black);
 }
-.book-info-popup > .close-btn{
+.book-info > .close-btn{
     width: 2rem;
     height: 2rem;
     position: absolute;
     top: clamp(.5rem, 5vh, 1rem);
     right: clamp(.5rem, 5vh, 1rem);
 }
-.book-info-popup > .close-btn > object{
+.book-info > .close-btn > object{
     width: 2rem;
     height: 2rem;
 }
+.book-info > form > .input-frame > select{
+    margin: 0 auto;
+    width: 85%;
+    font-size: 1.2rem;
+}
+.book-info > form > .btn-frame{
+    flex-flow: column wrap;
+}
+.book-info > form > .btn-frame > .submit-change-btn{
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 3.2rem;
+    font-size: 1.5rem;
+}
+
 .book-title{
     width: 9rem;
     font-size: clamp(1.8rem, 5vw, 2rem);
     overflow: auto;
     white-space: nowrap;
+}
+.book-title::-webkit-scrollbar{
+    height: .3rem;
+    border-radius: 20%;
+}
+.book-title::-webkit-scrollbar-track{
+    background: var(--white);
+}
+.book-title::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+.book-title::-webkit-scrollbar-thumb:hover, .book-title::-webkit-scrollbar-thumb:active{
+    background: var(--grey);
 }
 .book-author, .book-pages{
     width: 100%;
@@ -303,30 +380,32 @@ input::-webkit-file-upload-button:hover{
     overflow: auto;
     white-space: nowrap;
 }
-.book-info-popup > form > .input-frame > select{
-    margin: 0 auto;
-    width: 85%;
-    font-size: 1.2rem;
+.book-author::-webkit-scrollbar, .book-pages::-webkit-scrollbar{
+    height: .3rem;
+    border-radius: 20%;
 }
-.book-info-popup > form > .btn-frame{
-    flex-flow: column wrap;
+.book-author::-webkit-scrollbar-track, .book-pages::-webkit-scrollbar-track{
+    background: var(--white);
 }
-.book-info-popup > form > .btn-frame > .submit-btn{
-    margin-top: 1rem;
-    padding: 1rem 3.2rem;
-    font-size: 1.5rem;
+.book-author::-webkit-scrollbar-thumb, .book-pages::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+.book-author::-webkit-scrollbar-thumb:hover, .book-author::-webkit-scrollbar-thumb:active,
+.book-pages::-webkit-scrollbar-thumb:hover, .book-pages::-webkit-scrollbar-thumb:active{
+    background: var(--grey);
 }
 
 
 footer{
     padding: clamp(2rem, 5vh, 3rem);
+    height: max(12vw, 8rem);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .notice-text{
     text-align: center;
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 .notice-text > a{
     text-decoration: none;
@@ -336,8 +415,8 @@ footer{
 }
 
 
-.hide{
-    display: none;
+.active{
+    display: flex !important;
 }
 
 .display-book{
@@ -351,11 +430,13 @@ footer{
     background-color: var(--nread);
 }
 
-.overlay{
+#overlay{
     position: fixed;
+    display: none;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: var(--overlay);
+    background: var(--overlay);
+    z-index: 1;
 }
