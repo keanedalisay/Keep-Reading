@@ -23,29 +23,29 @@ button{
 }
 
 .title-frame{
-    height: clamp(5rem, 15vw, 10rem);
+    height: max(18vw, 10rem);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .subtitle-frame{
-    height: 12rem;
+    height: max(15vw, 10rem);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .webpage-icon{
-    width: clamp(5rem, 15vw, 10rem);
-    height: clamp(5rem, 15vw, 10rem);
+    width: clamp(5rem, 15vw, 20rem);
+    height: clamp(5rem, 15vw, 20rem);
 }
 .webpage-title{
     display: inline-block;
-    font-size: clamp(3rem, 8vw, 7rem);
+    font-size: clamp(3rem, 8vw, 12rem);
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
 .webpage-subtitle{
     display: inline-block;
-    font-size: clamp(1rem, 4vw, 1.7rem);
+    font-size: clamp(1rem, 4vw, 2.5rem);
     font-family: 'Aboreto', Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -151,7 +151,7 @@ button[type="submit"]:focus{
     padding: clamp(2rem, 5vh, 3rem);
     width: min(80%, 30rem);
     position: absolute;
-    top: min(10rem, 30vw);
+    top: max(10rem, 30vw);
     left: 0;
     right: 0;
     display: none;
@@ -209,8 +209,8 @@ input::-webkit-file-upload-button:hover{
 
 .book-frame{
     margin: 0 auto;
-    width: min(100%, 60rem);
-    height: max(50vh, 40rem);
+    width: min(100%, 80rem);
+    height: max(60vh, 40rem);
 }
 .book-frame::before, .book-frame::after{
     content: '';
@@ -256,6 +256,12 @@ input::-webkit-file-upload-button:hover{
 @media screen and (min-width: 450px){
     .book-rack{
         grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media screen and (min-width: 650px){
+    .book-rack{
+        grid-template-columns: repeat(4, auto);
     }
 }
 
@@ -364,14 +370,14 @@ input::-webkit-file-upload-button:hover{
 
 footer{
     padding: clamp(2rem, 5vh, 3rem);
-    height: min(20vw, 8rem);
+    height: max(12vw, 8rem);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .notice-text{
     text-align: center;
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 .notice-text > a{
     text-decoration: none;
